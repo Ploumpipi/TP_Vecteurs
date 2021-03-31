@@ -1,7 +1,10 @@
 #include "CVect2D.h"
-#include <iostream>
 
-using namespace std;
+/*CVect2D::CVect2D()
+{
+	this->flt_x = 0;
+	this->flt_y = 0;
+}*/
 
 CVect2D::CVect2D(float fl_x, float fl_y)
 {
@@ -68,7 +71,7 @@ void CVect2D::division()
 
 void CVect2D::affiche() const
 {
-	cout << "X : " << flt_x << ',' << " Y : " << flt_y << endl;
+	cout << "X : " << flt_x << ",\n" << "Y : " << flt_y << endl;
 }
 
 CVect2D CVect2D::operator+(CVect2D& v) const
@@ -83,7 +86,7 @@ CVect2D CVect2D::operator+(CVect2D& v) const
 CVect2D CVect2D::operator/(CVect2D& v)
 {
 	CVect2D v_temporaire;
-	if (p.n_x != 0 && p.n_y != 0) {
+	if (v.flt_x != 0 && v.flt_y != 0) {
 		v_temporaire.flt_x = this->flt_x / v.flt_x;
 		v_temporaire.flt_y = this->flt_y / v.flt_y;
 
