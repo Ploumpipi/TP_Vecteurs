@@ -51,4 +51,6 @@ int main() {
 	CVect3D v7(5, 4, 7);
 	cout << "v7 vaut : " << endl;
 	cout << v7;
+
+	return 0;
 }
