@@ -1,10 +1,10 @@
 #include "CVect2D.h"
 
-/*CVect2D::CVect2D()
+CVect2D::CVect2D()
 {
 	this->flt_x = 0;
 	this->flt_y = 0;
-}*/
+}
 
 CVect2D::CVect2D(float fl_x, float fl_y)
 {
@@ -43,7 +43,7 @@ void CVect2D::setY(float fl_y)
 	this->flt_y = fl_y;
 }
 
-void CVect2D::addition()
+/*void CVect2D::addition()
 {
 	this->flt_x = flt_x + flt_x;
 	this->flt_y = flt_y + flt_y;
@@ -67,7 +67,7 @@ void CVect2D::division()
 		this->flt_x = flt_x / flt_x;
 		this->flt_y = flt_y / flt_y;
 	}
-}
+}*/
 
 void CVect2D::affiche() const
 {

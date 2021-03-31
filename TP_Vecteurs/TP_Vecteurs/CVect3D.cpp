@@ -1,13 +1,13 @@
 #include "CVect3D.h"
 
-/*CVect3D::CVect3D()
+CVect3D::CVect3D()
 {
-	this->setX(2);
-	this->setY(3);
-	this->flt_z = 4;
-}*/
+	this->setX(0);
+	this->setY(0);
+	this->flt_z = 0;
+}
 
-CVect3D::CVect3D(float fl_x, float fl_y, float fl_z):CVect2D(fl_x, fl_z)
+CVect3D::CVect3D(float fl_x, float fl_y, float fl_z):CVect2D(fl_x, fl_y)
 {
 	this->flt_z = fl_z;
 }
@@ -87,9 +87,25 @@ void CVect3D::affiche() const
 	cout << "Z : " << this->flt_z << endl;
 }
 
+CVect3D CVect3D::operator=(const CVect3D& v)
+{
+	this->setX(v.getX());
+	this->setY(v.getY());
+	this->flt_z = v.flt_z;
+
+	return *this;
+}
+
 bool coincide3D(const CVect3D& v, const CVect3D& w, const CVect3D& x)
 {
 	return	v.getX() == w.getX() == x.getX() &&
 			v.getY() == w.getY() == x.getY() &&
 			v.flt_z == w.flt_z == x.flt_z;
+}
+
+ostream& operator<<(ostream& os, const CVect3D& v)
+{
+	// TODO: insérer une instruction return ici
+	os << "Le beau X : " << v.getX() << ",\n" << "Le beau Y : " << v.getY() << ",\n" << "Le beau Z : " << v.flt_z << endl;
+	return os;
 }
