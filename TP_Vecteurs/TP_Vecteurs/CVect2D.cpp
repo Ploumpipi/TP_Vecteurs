@@ -42,33 +42,72 @@ void CVect2D::setY(float fl_y)
 
 void CVect2D::addition()
 {
-	this->flt_x = flt_x + flt_y;
-	this->flt_y = flt_x + flt_y;
+	this->flt_x = flt_x + flt_x;
+	this->flt_y = flt_y + flt_y;
 }
 
 void CVect2D::soustraction()
 {
-	this->flt_x = flt_x - flt_y;
-	this->flt_y = flt_x - flt_y;
+	this->flt_x = flt_x - flt_x;
+	this->flt_y = flt_y - flt_y;
 }
 
 void CVect2D::multiplication()
 {
-	this->flt_x = flt_x * flt_y;
-	this->flt_y = flt_x * flt_y;
+	this->flt_x = flt_x * flt_x;
+	this->flt_y = flt_y * flt_y;
 }
 
 void CVect2D::division()
 {
 	if (flt_x != 0 && flt_y != 0) {
-		this->flt_x = flt_x / flt_y;
-		this->flt_y = flt_x / flt_y;
+		this->flt_x = flt_x / flt_x;
+		this->flt_y = flt_y / flt_y;
 	}
 }
 
 void CVect2D::affiche() const
 {
 	cout << "X : " << flt_x << ',' << " Y : " << flt_y << endl;
+}
+
+CVect2D CVect2D::operator+(CVect2D& v) const
+{
+	CVect2D v_temporaire;
+	v_temporaire.flt_x = this->flt_x + v.flt_x;
+	v_temporaire.flt_y = this->flt_y + v.flt_y;
+
+	return v_temporaire;
+}
+
+CVect2D CVect2D::operator/(CVect2D& v)
+{
+	CVect2D v_temporaire;
+	if (p.n_x != 0 && p.n_y != 0) {
+		v_temporaire.flt_x = this->flt_x / v.flt_x;
+		v_temporaire.flt_y = this->flt_y / v.flt_y;
+
+		return v_temporaire;
+	}
+	return *this;
+}
+
+CVect2D CVect2D::operator-(CVect2D& v) const
+{
+	CVect2D v_temporaire;
+	v_temporaire.flt_x = this->flt_x - v.flt_x;
+	v_temporaire.flt_y = this->flt_y - v.flt_y;
+
+	return v_temporaire;
+}
+
+CVect2D CVect2D::operator*(CVect2D& v) const
+{
+	CVect2D v_temporaire;
+	v_temporaire.flt_x = this->flt_x * v.flt_x;
+	v_temporaire.flt_y = this->flt_y * v.flt_y;
+
+	return v_temporaire;
 }
 
 bool coincide2D(const CVect2D& v, const CVect2D& w)

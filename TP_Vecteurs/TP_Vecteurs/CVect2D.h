@@ -37,4 +37,18 @@ public:
 	//Fonction affiche
 	void affiche()const;
 
+	//Surcharge opérateur
+
+	//Surcharge opérateur +
+	CVect2D operator +(CVect2D& v)const;
+
+	//Surcharge opérateur /
+	CVect2D operator /(CVect2D& v);
+
+	//Surcharge opérateur -
+	CVect2D operator -(CVect2D& v)const;
+
+	//Surcharge opérateur *
+	CVect2D operator *(CVect2D& v)const;
+
 };
